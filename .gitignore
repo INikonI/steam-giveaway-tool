@@ -1,0 +1,5 @@
+.vscode
+/target
+cargo.lock
+.DS_Store
+assets/icons/Thumbs.db
