@@ -2,10 +2,7 @@ use std::{
     collections::HashSet,
     sync::{Arc, RwLock, mpsc::Sender},
     thread,
-    time::Duration,
 };
-
-use std::thread::sleep;
 
 use crate::steam::{RelationshipFilter, SteamApiClient, SteamUser, StoreItemUserDetails};
 
