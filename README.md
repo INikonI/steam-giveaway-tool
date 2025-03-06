@@ -56,7 +56,7 @@ Inspired by [DeadP47](https://t.me/deadp47gaymer/28300)
 
 1. Download the latest release from the [Releases](https://github.com/INikonI/steam-giveaway-tool/releases)
 2. Extract the ZIP file to a location of your choice
-3. Run `xattr -cr "Steam Giveaway Tool.app"` to remove the app from quarantine and allow it to run
+3. Open `Terminal.app` and run `xattr -cr "Steam Giveaway Tool.app"` command to remove the app from quarantine and allow it to run
 4. Run `Steam Giveaway Tool.app`
    
 ### Build from Source
