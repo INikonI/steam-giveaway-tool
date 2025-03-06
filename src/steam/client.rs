@@ -109,7 +109,7 @@ impl SteamApiClient {
     pub fn update_current_user(&mut self, sender: Sender<Msg>) {
         if let Ok(ref token_info) = self.access_token.info {
             if let Ok(mut user) = self
-                .get_player_summaries(&[token_info.user_id])
+                .get_user_summaries(&[token_info.user_id])
                 .map(|users| users.into_iter().next().unwrap())
             {
                 user.country_code = Some(
@@ -142,7 +142,7 @@ impl SteamApiClient {
         )
     }
 
-    pub fn get_player_summaries(
+    pub fn get_user_summaries(
         &self,
         user_ids: &[SteamId],
     ) -> Result<Vec<SteamUser>, reqwest::Error> {
