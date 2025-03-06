@@ -16,10 +16,10 @@ pub fn winners_window(app: &mut App, ctx: &Context) {
             table = table.column(Column::auto().at_least(40.));
         }
         table
-            .column(Column::auto().at_least(200.))
+            .column(Column::remainder().at_least(200.))
             .column(Column::auto().at_least(60.))
-            .column(Column::exact(80.))
-            .column(Column::exact(80.))
+            .column(Column::auto())
+            .column(Column::auto())
             .column(Column::auto())
             .cell_layout(Layout::left_to_right(Align::Center))
             .header(20.0, |mut header| {
@@ -39,8 +39,10 @@ pub fn winners_window(app: &mut App, ctx: &Context) {
                         .on_hover_text_at_pointer("Region in profile");
                 });
                 header.col(|ui| {
+                    ui.add_space(10.);
                     ui.heading("\u{1F4C5} Age")
                         .on_hover_text_at_pointer("How old is the account in years");
+                    ui.add_space(10.);
                 });
                 header.col(|ui| {
                     ui.heading("\u{1F3C6} Won");
