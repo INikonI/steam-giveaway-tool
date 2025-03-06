@@ -11,7 +11,7 @@ Inspired by [DeadP47](https://t.me/deadp47gaymer/28300)
 # Demo
 
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/514af833-3a68-4f03-9836-5d3f2348797" type="video/mp4"></video>
+  <video src="https://github.com/user-attachments/assets/22f9850c-7414-4f6c-b9ab-cbb9b32f48ec" type="video/mp4"></video>
 </div>
 
 ## ⭐ Features
