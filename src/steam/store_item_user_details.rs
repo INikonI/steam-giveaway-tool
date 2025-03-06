@@ -66,7 +66,9 @@ pub fn execute_request(
                 .collect::<Vec<String>>()
                 .join(","),
         )])
-        .send()?
+        .send()
+        .inspect(|r| println!("{:#?}", r))
+        .inspect_err(|e| eprintln!("{:#?}", e))?
         .json::<Response>()
         .map(|res| res.apps)
 }

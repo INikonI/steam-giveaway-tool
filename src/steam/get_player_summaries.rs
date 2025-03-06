@@ -1,4 +1,4 @@
-use super::{SteamUser, SteamId};
+use super::{SteamId, SteamUser};
 use reqwest::blocking::Client;
 use serde::Deserialize;
 
@@ -31,7 +31,9 @@ pub fn execute_request(
                     .join(","),
             ),
         ])
-        .send()?
+        .send()
+        .inspect(|r| println!("{:#?}", r))
+        .inspect_err(|e| eprintln!("{:#?}", e))?
         .json::<GetPlayerSummaries>()
         .map(|res| res.response.players)
 }

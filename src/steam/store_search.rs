@@ -21,7 +21,9 @@ pub fn execute_request(
             ("l", "english"),
             ("cc", country_code.unwrap_or("us")),
         ])
-        .send()?
+        .send()
+        .inspect(|r| println!("{:#?}", r))
+        .inspect_err(|e| eprintln!("{:#?}", e))?
         .json::<StoreSearch>()
         .map(|res| res.items)
 }

@@ -24,7 +24,9 @@ pub fn execute_request(
             ("access_token", access_token),
             ("steamid", &user_id.to_string()),
         ])
-        .send()?
+        .send()
+        .inspect(|r| println!("{:#?}", r))
+        .inspect_err(|e| eprintln!("{:#?}", e))?
         .json::<GetUserCountry>()
         .map(|res| res.response.country)
 }

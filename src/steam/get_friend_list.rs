@@ -58,7 +58,9 @@ pub fn execute_request(
                 &user_id.map(|id| id.to_string()).unwrap_or_default(),
             ),
         ])
-        .send()?
+        .send()
+        .inspect(|r| println!("{:#?}", r))
+        .inspect_err(|e| eprintln!("{:#?}", e))?
         .json::<GetFriendList>()
         .map(|res| res.friends)
 }
