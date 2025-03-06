@@ -7,7 +7,7 @@ use crate::app::Msg;
 use super::get_friend_list::{self, Friend, RelationshipFilter};
 use super::{
     SteamId, SteamStoreItem, SteamUser, StoreItemId, StoreItemUserDetails,
-    get_current_user_country, get_player_summaries, store_item_user_details, store_search,
+    get_current_user_country, get_user_summaries, store_item_user_details, store_search,
 };
 use base64::{Engine, prelude::BASE64_URL_SAFE_NO_PAD};
 use chrono::serde::ts_seconds;
@@ -146,7 +146,7 @@ impl SteamApiClient {
         &self,
         user_ids: &[SteamId],
     ) -> Result<Vec<SteamUser>, reqwest::Error> {
-        get_player_summaries::execute_request(&self.http, &self.access_token.token, user_ids)
+        get_user_summaries::execute_request(&self.http, &self.access_token.token, user_ids)
     }
 
     pub fn app_user_details(

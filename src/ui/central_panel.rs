@@ -32,14 +32,15 @@ pub fn central_panel(app: &mut App, ctx: &Context) {
         .response
         .on_disabled_hover_text("No friends to search.");
         ui.add_space(7.);
-        let mut table = TableBuilder::new(ui).striped(true).auto_shrink(true);
+        let mut table = TableBuilder::new(ui).striped(true).auto_shrink(false);
         if app.preferences.avatars {
             table = table.column(Column::auto().at_least(40.));
         }
         table
-            .column(Column::auto().at_least(200.))
+            .column(Column::remainder().at_least(200.))
             .column(Column::auto().at_least(60.))
-            .column(Column::remainder().at_least(80.))
+            .column(Column::auto())
+            .column(Column::auto())
             .cell_layout(Layout::left_to_right(Align::Center))
             .header(20.0, |mut header| {
                 if app.preferences.avatars {
@@ -56,6 +57,12 @@ pub fn central_panel(app: &mut App, ctx: &Context) {
                 header.col(|ui| {
                     ui.heading("\u{1F30D}")
                         .on_hover_text_at_pointer("Region in profile");
+                });
+                header.col(|ui| {
+                    ui.add_space(10.);
+                    ui.heading("\u{1F4C5} Age")
+                        .on_hover_text_at_pointer("How old is the account in years");
+                    ui.add_space(10.);
                 });
                 header.col(|ui| {
                     ui.heading("\u{1F3C6} Won");

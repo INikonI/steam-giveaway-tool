@@ -3,12 +3,7 @@ use reqwest::blocking::Client;
 use serde::Deserialize;
 
 #[derive(Debug, Deserialize)]
-struct GetPlayerSummaries {
-    response: Response,
-}
-
-#[derive(Debug, Deserialize)]
-struct Response {
+struct GetUserSummaries {
     players: Vec<SteamUser>,
 }
 
@@ -17,11 +12,10 @@ pub fn execute_request(
     access_token: &str,
     user_ids: &[SteamId],
 ) -> Result<Vec<SteamUser>, reqwest::Error> {
-    const URL: &str = "https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2";
+    const URL: &str = "https://api.steampowered.com/ISteamUserOAuth/GetUserSummaries/v1";
     http.get(URL)
         .query(&[
             ("access_token", access_token),
-            ("key", access_token),
             (
                 "steamids",
                 &user_ids
@@ -31,9 +25,7 @@ pub fn execute_request(
                     .join(","),
             ),
         ])
-        .send()
-        .inspect(|r| println!("{:#?}", r))
-        .inspect_err(|e| eprintln!("{:#?}", e))?
-        .json::<GetPlayerSummaries>()
-        .map(|res| res.response.players)
+        .send()?
+        .json::<GetUserSummaries>()
+        .map(|res| res.players)
 }

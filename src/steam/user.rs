@@ -1,3 +1,5 @@
+use chrono::serde::ts_seconds_option;
+use chrono::{DateTime, Utc};
 use eframe::egui::{Context, CursorIcon, Image, OpenUrl, Sense};
 use egui_extras::TableRow;
 use serde::{Deserialize, Deserializer, Serialize, de};
@@ -56,6 +58,9 @@ pub struct SteamUser {
     /// ISO3166-2 code. For current user - real, for others - profile
     #[serde(rename = "loccountrycode")]
     pub country_code: Option<String>,
+
+    #[serde(default, rename = "timecreated", with = "ts_seconds_option")]
+    pub created_at: Option<DateTime<Utc>>,
 }
 
 impl SteamUser {
@@ -114,10 +119,25 @@ impl SteamUser {
             }
         });
         row.col(|ui| {
-            ui.label(if let Some(times) = winners.all_time.get(&self.id) {
-                pluralize("time", *times)
-            } else {
-                "Never".to_owned()
+            ui.centered_and_justified(|ui| {
+                if let Some(years) = self
+                    .created_at
+                    .map(|date| Utc::now().years_since(date).unwrap().to_string())
+                {
+                    ui.label(years);
+                } else {
+                    ui.label("?")
+                        .on_hover_text_at_pointer("Due to privacy settings");
+                }
+            });
+        });
+        row.col(|ui| {
+            ui.centered_and_justified(|ui| {
+                ui.label(if let Some(times) = winners.all_time.get(&self.id) {
+                    pluralize("time", *times)
+                } else {
+                    "Never".to_owned()
+                });
             });
         });
     }

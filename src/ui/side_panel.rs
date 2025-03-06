@@ -1,3 +1,4 @@
+use chrono::Utc;
 use eframe::egui::{
     Align, Button, Checkbox, Context, Direction, DragValue, Layout, ProgressBar, RichText,
     ScrollArea, SidePanel, TopBottomPanel, menu::menu_custom_button,
@@ -7,6 +8,7 @@ use std::thread;
 
 use crate::{
     app::{App, Msg, RegionFilter},
+    steam::STEAM_FOUNDATION_DATE,
     utils::ui_with_space_before_and_after,
 };
 
@@ -193,6 +195,20 @@ pub fn side_panel(app: &mut App, ctx: &Context) {
                             &mut app.filters.exclude_who_won_before,
                             "Exclude who won earlier",
                         );
+                        ui.checkbox(
+                            &mut app.filters.exclude_unknown_age,
+                            "Exclude unknown age",
+                        );
+                        ui.horizontal(|ui| {
+                            ui.label("Account age");
+                            ui.add(
+                                DragValue::new(
+                                    &mut app.filters.account_age
+                                )
+                                .range(0..=Utc::now().years_since(*STEAM_FOUNDATION_DATE).unwrap())
+                                .prefix(">= ")
+                            );
+                        });
                     });
                 });
 

@@ -1,8 +1,10 @@
+mod account_age;
 mod exclude_won_before;
 mod has_app;
 mod include_app_in_wishlist;
 mod region;
 
+pub use account_age::*;
 pub use exclude_won_before::*;
 pub use has_app::*;
 pub use include_app_in_wishlist::*;
@@ -15,12 +17,17 @@ pub struct Filters {
     pub regions_and_countries: RegionsAndCountriesFilter,
     pub has_store_items: Vec<HasAppFilter>,
 
+    pub account_age: u32,
+    pub exclude_unknown_age: bool,
+
     pub include_who_has_app_in_wishlist: bool,
     pub exclude_who_won_before: bool,
 }
 
 impl Filters {
     pub fn reset(&mut self, friends: &Friends) {
+        self.account_age = 0;
+        self.exclude_unknown_age = false;
         self.has_store_items = Default::default();
         self.include_who_has_app_in_wishlist = false;
         self.exclude_who_won_before = false;

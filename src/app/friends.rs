@@ -10,8 +10,8 @@ use std::thread::sleep;
 use crate::steam::{RelationshipFilter, SteamApiClient, SteamUser, StoreItemUserDetails};
 
 use super::{
-    Msg, Winners, apply_has_app_filters, apply_region_filters, exclude_who_won_before,
-    filters::Filters, include_who_has_store_item_in_wishlist,
+    Msg, Winners, apply_account_age_filter, apply_has_app_filters, apply_region_filters,
+    exclude_who_won_before, filters::Filters, include_who_has_store_item_in_wishlist,
 };
 
 #[derive(Default)]
@@ -48,6 +48,7 @@ impl Friends {
 
         let mut filtered_friends = self.all.clone();
 
+        apply_account_age_filter(&mut filtered_friends, filters);
         if filters.exclude_who_won_before {
             exclude_who_won_before(&mut filtered_friends, winners);
         }
