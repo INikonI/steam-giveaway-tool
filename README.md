@@ -54,22 +54,28 @@ Inspired by [DeadP47](https://t.me/deadp47gaymer/28300)
 
 ### Build from Source
 
-#### Windows, macOS and Linux
-
 To build the Steam Giveaway Tool from source, follow these steps:
 
 1. Ensure you have Rust installed (version >= 1.85). If not, install it from [Rust's official website](https://www.rust-lang.org/tools/install) or using your package manager.
-
 2. Clone the repository:
 ```bash
 git clone https://github.com/INikonI/steam-giveaway-tool.git
 cd steam-giveaway-tool
-cargo build --release
 ```
-After the build is complete, you can run the application by executing:
-```bash
-./target/release/steam-giveaway-tool
-```
+3. Build 
+
+- Windows
+  ```bash
+  rustup target add x86_64-pc-windows-gnu
+  cargo build --release
+  ./target/release/steam-giveaway-tool.exe
+  ```
+
+- macOS and Linux
+  ```bash
+  cargo build --release
+  ./target/release/steam-giveaway-tool
+  ```
 
 ## 🚀 Usage
 
