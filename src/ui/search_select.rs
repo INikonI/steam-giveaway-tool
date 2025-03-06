@@ -90,7 +90,7 @@ impl SearchSelect {
                     ScrollArea::vertical()
                         .min_scrolled_height(255.)
                         .show(ui, |ui| {
-                            let i_last = self.results.len() - 1;
+                            let i_last = self.results.len().max(1) - 1;
                             for (i, store_item) in self.results.iter().enumerate() {
                                 if ui
                                     .add_enabled(store_item.price.is_some(), {
