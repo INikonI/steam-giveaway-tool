@@ -11,7 +11,7 @@ pub fn winners_window(app: &mut App, ctx: &Context) {
     .open(&mut app.show_winners_window)
     .order(eframe::egui::Order::Middle)
     .show(ctx, |ui| {
-        let mut table = TableBuilder::new(ui).striped(true).auto_shrink(true);
+        let mut table = TableBuilder::new(ui).striped(true);
         if app.preferences.avatars {
             table = table.column(Column::auto().at_least(40.));
         }
