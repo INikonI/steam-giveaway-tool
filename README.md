@@ -1,6 +1,6 @@
 # <img src="assets/icons/icon.png" width="24"> Steam Giveaway Tool
 
-Steam Giveaway Tool is a cross-platform application with a graphical user interface (GUI) designed to easily distribute Steam store items among your friends.
+Steam Giveaway Tool is an cross-platform app with GUI for convenient give away steam store items among steam friends.
 
 Inspired by [DeadP47](https://t.me/deadp47gaymer/28300)
 
