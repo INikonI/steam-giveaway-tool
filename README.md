@@ -29,10 +29,10 @@ Inspired by [DeadP47](https://t.me/deadp47gaymer/28300)
 
   <sub>Filtering by region, wishlist, playtime, and owned apps works only if this information is publicly available based on privacy settings</sub>
 
-#### 🎁 **Gift Management**
-- Copy friend nicknames and open Steam profiles directly from the app 
-
   <sub>Currently automatic addition to the cart or gifting is not supported, but it may be added in the future</sub>
+
+#### 🫂 **Friends Profiles**
+- Copy friend nicknames and open Steam profiles directly from the app 
 
 #### ⚙️ **Customization & UI Options**
 - Hide avatars, app banners, and flag icons for a cleaner interface
@@ -52,6 +52,13 @@ Inspired by [DeadP47](https://t.me/deadp47gaymer/28300)
 2. Extract the ZIP file to a location of your choice
 3. Run the `steam-giveaway-tool.exe` file to start the application
 
+#### macOS
+
+1. Download the latest release from the [Releases](https://github.com/INikonI/steam-giveaway-tool/releases)
+2. Extract the ZIP file to a location of your choice
+3. Run `xattr -cr "Steam Giveaway Tool.app"` to remove the app from quarantine and allow it to run
+4. Run `Steam Giveaway Tool.app`
+   
 ### Build from Source
 
 To build the Steam Giveaway Tool from source, follow these steps:
@@ -90,7 +97,7 @@ To obtain a store token, follow these steps:
 
 #### 🔄 How to Use the Giveaway Tool
 
-1. **Launch the App**: Open the Steam Giveaway Tool from your desktop or terminal.
+1. **Launch the App**: Open the Steam Giveaway Tool from your desktop or terminal
 
 2. **Randomize Giveaway**:
 - Choose the number of winners you want to select
@@ -126,7 +133,7 @@ To obtain a store token, follow these steps:
 
 ## Contributing
 
-Contributions are welcome! Feel free to submit pull requests or report issues.
+Contributions are welcome! Feel free to submit pull requests or report issues
 
 ---
 <sub>This project is not affiliated with, endorsed, or sponsored by Steam, Valve Corporation, or any of their subsidiaries. All trademarks, product names, and company names are the property of their respective owners</sub>
