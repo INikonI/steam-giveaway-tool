@@ -5,7 +5,7 @@ Steam Giveaway Tool is a cross-platform application with a graphical user interf
 Inspired by [DeadP47](https://t.me/deadp47gaymer/28300)
 
 <a href="https://www.tinkoff.ru/rm/r_IyhoQQIETG.clGaATqxKK/1Qkhh56044">
-  <img src="assets/icons/tinkoff.png" width="230">
+  <img src="assets/buttons/tinkoff.png" width="230">
 </a>
 
 # Demo
@@ -26,11 +26,13 @@ Inspired by [DeadP47](https://t.me/deadp47gaymer/28300)
   - **owned apps**
   - **account age**
   - **playtime**
-- <sub>Filtering by region, wishlist, playtime, and owned apps works only if this information is publicly available based on privacy settings</sub>
+
+  <sub>Filtering by region, wishlist, playtime, and owned apps works only if this information is publicly available based on privacy settings</sub>
 
 #### 🎁 **Gift Management**
 - Copy friend nicknames and open Steam profiles directly from the app 
-  - <sub>Currently automatic addition to the cart or gifting is not supported, but it may be added in the future</sub>
+
+  <sub>Currently automatic addition to the cart or gifting is not supported, but it may be added in the future</sub>
 
 #### ⚙️ **Customization & UI Options**
 - Hide avatars, app banners, and flag icons for a cleaner interface
@@ -92,6 +94,8 @@ To obtain a store token, follow these steps:
 
 3. **Your Friends**: 
 - Click on the `Reload` button to reload a list of your Steam friends (if needed)
+- Press to friend's name to copy it
+- Press to friend's avatar to open their Steam profile in browser 
 - To choose friends which only wishlist some app, you need:
   1. In `Store item for giveaway` category choose app
   2. In `Filters` category mark `Only has app in whishlist` option
