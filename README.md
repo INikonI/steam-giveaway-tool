@@ -29,10 +29,10 @@ Inspired by [DeadP47](https://t.me/deadp47gaymer/28300)
 
   <sub>Filtering by region, wishlist, playtime, and owned apps works only if this information is publicly available based on privacy settings</sub>
 
-#### 🎁 **Gift Management**
-- Copy friend nicknames and open Steam profiles directly from the app 
-
   <sub>Currently automatic addition to the cart or gifting is not supported, but it may be added in the future</sub>
+
+#### 🫂 **Friends Profiles**
+- Copy friend nicknames and open Steam profiles directly from the app 
 
 #### ⚙️ **Customization & UI Options**
 - Hide avatars, app banners, and flag icons for a cleaner interface
@@ -52,6 +52,13 @@ Inspired by [DeadP47](https://t.me/deadp47gaymer/28300)
 2. Extract the ZIP file to a location of your choice
 3. Run the `steam-giveaway-tool.exe` file to start the application
 
+#### macOS
+
+1. Download the latest release from the [Releases](https://github.com/INikonI/steam-giveaway-tool/releases)
+2. Extract the ZIP file to a location of your choice
+3. Open `Terminal.app` and run `xattr -cr "Steam Giveaway Tool.app"` command to remove the app from quarantine and allow it to run
+4. Run `Steam Giveaway Tool.app`
+   
 ### Build from Source
 
 To build the Steam Giveaway Tool from source, follow these steps:
@@ -90,12 +97,13 @@ To obtain a store token, follow these steps:
 
 #### 🔄 How to Use the Giveaway Tool
 
-1. **Launch the App**: Open the Steam Giveaway Tool from your desktop or terminal.
+1. **Launch the App**: Open the Steam Giveaway Tool from your desktop or terminal
 
 2. **Randomize Giveaway**:
 - Choose the number of winners you want to select
 - To track users who have already won, you can press `Save current`, and later in the filters, you can exclude these users
-  - there is also an option for auto-saving, but if you perform test/randomizations by accident, it may count users as already winning, even if they haven't. Therefore, it’s better to use manual saving
+  - There is also an option for auto-saving, but if you perform test/randomizations by accident, it may count users as already winning, even if they haven't. Therefore, it’s better to use manual saving
+  - But you still can reset this in `Menu > Settings > Other > Clear winners for all time`
 - The app will randomly choose friends based on your filters and display them in the `Winners` list
 
 3. **Your Friends**: 
@@ -118,15 +126,15 @@ To obtain a store token, follow these steps:
 - To choose friends who own a specific app and/or have a specific playtime:
   1. In the `Filters` category, find `Has store items` and press `+`
   2. Find and select the required app:
-      - you can also specify all-time playtime in hours, for example, more than 10 hours
-      - the same applies for 2-week playtime
+      - You can also specify all-time playtime in hours, for example, more than 10 hours
+      - The same applies for 2-week playtime
 - To choose friends who have an account age of more than some years:
   1. In the `Filters` category, find `Account age`
   2. Select the minimum number of years for an existing account to filter out new accounts, or left 0 to show all accounts
 
 ## Contributing
 
-Contributions are welcome! Feel free to submit pull requests or report issues.
+Contributions are welcome! Feel free to submit pull requests or report issues
 
 ---
 <sub>This project is not affiliated with, endorsed, or sponsored by Steam, Valve Corporation, or any of their subsidiaries. All trademarks, product names, and company names are the property of their respective owners</sub>
