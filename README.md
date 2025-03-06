@@ -102,7 +102,8 @@ To obtain a store token, follow these steps:
 2. **Randomize Giveaway**:
 - Choose the number of winners you want to select
 - To track users who have already won, you can press `Save current`, and later in the filters, you can exclude these users
-  - there is also an option for auto-saving, but if you perform test/randomizations by accident, it may count users as already winning, even if they haven't. Therefore, it’s better to use manual saving
+  - There is also an option for auto-saving, but if you perform test/randomizations by accident, it may count users as already winning, even if they haven't. Therefore, it’s better to use manual saving
+  - But you still can reset this in `Menu > Settings > Other > Clear winners for all time`
 - The app will randomly choose friends based on your filters and display them in the `Winners` list
 
 3. **Your Friends**: 
@@ -125,8 +126,8 @@ To obtain a store token, follow these steps:
 - To choose friends who own a specific app and/or have a specific playtime:
   1. In the `Filters` category, find `Has store items` and press `+`
   2. Find and select the required app:
-      - you can also specify all-time playtime in hours, for example, more than 10 hours
-      - the same applies for 2-week playtime
+      - You can also specify all-time playtime in hours, for example, more than 10 hours
+      - The same applies for 2-week playtime
 - To choose friends who have an account age of more than some years:
   1. In the `Filters` category, find `Account age`
   2. Select the minimum number of years for an existing account to filter out new accounts, or left 0 to show all accounts
