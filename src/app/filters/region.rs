@@ -12,6 +12,7 @@ pub const CIS_COUNTRIES: &[&str] = &[
     "UA", // Украина
     "UZ", // Узбекистан
     "TM", // Туркменистан
+    "GE", // Грузия
 ];
 
 pub const EU_COUNTRIES: &[&str] = &[
