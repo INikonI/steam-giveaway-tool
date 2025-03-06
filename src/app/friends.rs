@@ -82,7 +82,7 @@ pub fn fetch_friends(
 
         for (n, chunk) in chunks.enumerate() {
             if let Ok(data) =
-                steam.get_player_summaries(&chunk.iter().map(|f| f.id).collect::<Vec<_>>())
+                steam.get_user_summaries(&chunk.iter().map(|f| f.id).collect::<Vec<_>>())
             {
                 list.extend(data);
             }
@@ -91,7 +91,6 @@ pub fn fetch_friends(
                     (n + 1) as f32 / chunks_count as f32,
                 ))
                 .expect("Message should be sended");
-            sleep(Duration::from_millis(50));
         }
 
         list
